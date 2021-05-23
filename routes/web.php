@@ -23,5 +23,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');
 Route::get('/', [App\Http\Controllers\Front\PuppieController::class, 'index'])->name('puppie');
 
+//Route::resource('category', [App\Http\Controllers\Admin\CategoryController::class]);
+Route::resource('category','Admin\CategoryController');
+
 
 

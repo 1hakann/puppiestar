@@ -1,4 +1,5 @@
 const mix = require('laravel-mix');
+//const { mixin } = require('vue/types/umd');
 const $AdminResAs = 'resources/assets/adminn';
 const $AdminPubAs = 'public/admins';
 
@@ -28,6 +29,10 @@ const $AdminPubAs = 'public/admins';
         mix.copy($AdminResAs+'/dist/js/map/chartist.min.js.map',$AdminPubAs+'/js');
         mix.copy($AdminResAs+'/dist/js/map/chartist-plugin-tooltip.min.js.map',$AdminPubAs+'/js');
         mix.copy($AdminResAs+'/assets/images/custom-select.png','public/assets/images/custom-select.png');
+
+        mix.copy('resources/js/datatables.net/js/jquery.dataTables.min.js',$AdminPubAs+'/js/datatable');
+        mix.copy('resources/js/datatable/datatable-basic.init.js',$AdminPubAs+'/js/datatable');
+
 
 
 mix.js('resources/js/app.js', 'public/js')

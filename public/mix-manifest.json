@@ -35,6 +35,9 @@
     "/admins/js/feather.min.js.map": "/admins/js/feather.min.js.map?id=d0b5495d372e885a02dc",
     "/admins/js/chartist.min.js.map": "/admins/js/chartist.min.js.map?id=4369fc94dde47a56e597",
     "/admins/js/chartist-plugin-tooltip.min.js.map": "/admins/js/chartist-plugin-tooltip.min.js.map?id=7fea201fdc5a0b8078a7",
+    "/assets/images/custom-select.png": "/assets/images/custom-select.png?id=ababe52cd11186eebd43",
+    "/admins/js/datatable/jquery.dataTables.min.js": "/admins/js/datatable/jquery.dataTables.min.js?id=e5611b97324ae449ea5e",
+    "/admins/js/datatable/datatable-basic.init.js": "/admins/js/datatable/datatable-basic.init.js?id=b23123a26140fdfc85e2",
     "/admins/js/hc-admin.js": "/admins/js/hc-admin.js?id=9f524df6a9bc4a28bb4d",
     "/admins/css/hc-admin.css": "/admins/css/hc-admin.css?id=e83724dde7fe472892fc"
 }

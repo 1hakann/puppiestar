@@ -8,6 +8,7 @@
 <script src="{{mix('admins/js/hc-admin.js')}}"></script>
 
 @yield('dashboard-js')
+@yield('page-level-scripts')
 
 </body>
 
