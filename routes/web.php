@@ -26,5 +26,9 @@ Route::get('/', [App\Http\Controllers\Front\PuppieController::class, 'index'])->
 //Route::resource('category', [App\Http\Controllers\Admin\CategoryController::class]);
 Route::resource('category','Admin\CategoryController');
 
+Route::get('/switch','Admin\CategoryController@switch')->name('switch');
+Route::get('/kategoriler/siralama','Admin\CategoryController@orders')->name('category.orders');
+
+
 
 

@@ -16,7 +16,8 @@ class CategoryController extends Controller
      */
     public function index()
     {
-        
+        $categories = Category::get();
+        return view('admin.category.index',compact('categories'));
     }
 
     /**
@@ -50,7 +51,7 @@ class CategoryController extends Controller
             'image' => $image
         ]);
 
-        return redirect()->back()->with('message','Kategori Başarıyla Oluşturuldu'); 
+        return redirect()->route('category.index')->with('message','Kategori Başarıyla Oluşturuldu'); 
     }
 
     /**
@@ -72,7 +73,8 @@ class CategoryController extends Controller
      */
     public function edit($id)
     {
-        //
+        $category = Category::find($id);
+        return view('admin.category.edit',compact('category'));
     }
 
     /**
@@ -84,7 +86,20 @@ class CategoryController extends Controller
      */
     public function update(Request $request, $id)
     {
-        //
+        $category = Category::find($id);
+        $image = $category->image;
+        if($request->hasFile('image'))
+        {
+            $image = $request->file('image')->store('public/files');
+            \Storage::delete($category->image);
+        }
+
+        $category->name = $request->name;
+        $category->description = $request->description;
+        $category->image = $image;
+        $category->save();
+        
+        return redirect()->route('category.index')->with('message','Kategori Başarıyla Güncelleştirildi');
     }
 
     /**
@@ -95,6 +110,12 @@ class CategoryController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $category = Category::find($id);
+        $filename = $category->image;
+        $category->delete();
+        \Storage::delete($filename);
+        return redirect()->route('category.index')->with('message','Kategori Başarıyla Silindi');
+
+
     }
 }
