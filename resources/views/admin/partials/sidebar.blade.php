@@ -12,9 +12,14 @@
                         <li class="nav-small-cap"><span class="hide-menu">İşlemler</span></li>
 
                         <li class="sidebar-item"> <a class="sidebar-link" href="{{route('category.index')}}"
-                                aria-expanded="false"><i data-feather="tag" class="feather-icon"></i><span
+                                aria-expanded="false"><i data-feather="tag" class="feather-icon" style="color: green"></i><span
                                     class="hide-menu">Kategoriler
                                 </span></a>
+                        </li>
+                        <li class="sidebar-item"> <a class="sidebar-link" href="{{route('subcategory.index')}}"
+                            aria-expanded="false"><i style="color:purple;" class="fas fa-desktop"></i><span
+                                class="hide-menu">Alt Kategoriler
+                            </span></a>
                         </li>
                         <li class="sidebar-item"> <a class="sidebar-link sidebar-link" href="app-chat.html"
                                 aria-expanded="false"><i data-feather="message-square" class="feather-icon"></i><span

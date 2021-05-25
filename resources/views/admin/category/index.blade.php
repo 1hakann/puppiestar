@@ -40,7 +40,7 @@
                 <td>
                 <input class="switch" category_id="{{$category->id}}" data-width="100" type="checkbox" @if($category->status==1) checked @endif  data-toggle="toggle" data-on="Açık" data-off="Kapalı" data-onstyle="primary" data-offstyle="warning"></td>
                 <td>
-                    <a href="{{route('category.edit',$category->id)}}" class="btn-sm float-left" title="Edit"><i class="fas fa-pen"></i>Düzenle</a>
+                    <a href="{{route('category.edit',$category->id)}}" class="btn btn-circle btn-sm float-left" title="Edit"><i class="fas fa-allergies"></i></a>
                     <form action="{{route('category.destroy',$category->id)}}" method="POST">
                       @csrf
                       @method("DELETE")
