@@ -11,10 +11,14 @@
     <meta name="author" content="">
     <!-- Favicon icon -->
     <link rel="icon" type="image/png" sizes="16x16" href="assets/images/favicon.png">
-    <title>Adminmart Template - The Ultimate Multipurpose admin template</title>
+    <title>PuppieStar Yönetim Paneli</title>
     <!-- Custom CSS -->
 
     <link href="{{mix('admins/css/hc-admin.css')}}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+    
+    <!--datatables css -->
+    <link href="{{mix('admins/css/dataTables.bootstrap4.css')}}" rel="stylesheet">
    
 
     <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->

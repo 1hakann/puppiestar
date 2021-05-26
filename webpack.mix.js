@@ -32,7 +32,7 @@ const $AdminPubAs = 'public/admins';
 
         mix.copy('resources/js/datatables.net/js/jquery.dataTables.min.js',$AdminPubAs+'/js/datatable');
         mix.copy('resources/js/datatable/datatable-basic.init.js',$AdminPubAs+'/js/datatable');
-
+        mix.copy($AdminResAs+'/assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css',$AdminPubAs+'/css');
 
 
 mix.js('resources/js/app.js', 'public/js')

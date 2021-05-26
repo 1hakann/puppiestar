@@ -38,6 +38,7 @@
     "/assets/images/custom-select.png": "/assets/images/custom-select.png?id=ababe52cd11186eebd43",
     "/admins/js/datatable/jquery.dataTables.min.js": "/admins/js/datatable/jquery.dataTables.min.js?id=e5611b97324ae449ea5e",
     "/admins/js/datatable/datatable-basic.init.js": "/admins/js/datatable/datatable-basic.init.js?id=b23123a26140fdfc85e2",
+    "/admins/css/dataTables.bootstrap4.css": "/admins/css/dataTables.bootstrap4.css?id=1758e9d3c2304ff1d0d8",
     "/admins/js/hc-admin.js": "/admins/js/hc-admin.js?id=9f524df6a9bc4a28bb4d",
     "/admins/css/hc-admin.css": "/admins/css/hc-admin.css?id=e83724dde7fe472892fc"
 }

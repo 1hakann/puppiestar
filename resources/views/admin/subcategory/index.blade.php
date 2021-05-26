@@ -10,7 +10,7 @@
     <div class="table-responsive">
        
         <table class="table table-bordered align-items-center table-flush table table-hover table-white" id="dataTable" width="100%" cellspacing="0">
-            <a class="light" href="{{route('category.create')}}"><input type="button" value="Kategori Ekle" class="btn btn-success"></a>
+            <a class="light" href="{{route('subcategory.create')}}"><input type="button" value="Kategori Ekle" class="btn btn-success"></a>
           <thead class="thead-light">
             <tr>
               <th scope="col" class="sort" data-sort="order">#</th>

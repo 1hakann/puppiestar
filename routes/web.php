@@ -23,8 +23,12 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/admin', [App\Http\Controllers\Admin\AdminController::class, 'index'])->name('admin');
 Route::get('/', [App\Http\Controllers\Front\PuppieController::class, 'index'])->name('puppie');
 
+Route::get('subcategories/{id}','Admin\ProductController@loadSubCategories');
+
 Route::resource('category','Admin\CategoryController');
 Route::resource('subcategory','Admin\SubCategoryController');
+Route::resource('product','Admin\ProductController');
+
 
 
 Route::get('/switch','Admin\CategoryController@switch')->name('switch');
