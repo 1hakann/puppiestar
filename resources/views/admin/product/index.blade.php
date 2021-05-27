@@ -43,7 +43,7 @@
                                 <td>{!!$product->description!!}</td>
                                 <td>{!!$product->additional_info!!}</td>
                                 <td>{{$product->price}}</td>
-                                <td>{{$product->category->name}}</td>
+                                <td>{{$product->category->name ?? ''}}</td>
                                 <td><a href="{{route('product.edit',$product->id)}}" class="btn btn-circle btn-sm float-left" title="Edit"><i class="fas fa-allergies"></i></a>
                                     <form action="{{route('product.destroy',$product->id)}}" method="POST">
                                       @csrf

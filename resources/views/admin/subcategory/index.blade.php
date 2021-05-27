@@ -25,7 +25,7 @@
             <tr>
                 <td><a href="">{{$key+1}}</a></td>
                 <td>{{$subcategory->name}}</td>
-                <td>{{$subcategory->category->name}}</td>
+                <td>{{$subcategory->category->name ?? ''}}</td>
                 <td><a href="{{route('subcategory.edit',$subcategory->id)}}" class="btn btn-circle btn-sm float-left" title="Düzenle"><i class="fas fa-allergies"></i></a>
                     <form action="{{route('subcategory.destroy',$subcategory->id)}}" method="POST">
                       @csrf
