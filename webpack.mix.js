@@ -35,7 +35,7 @@ const $AdminPubAs = 'public/admins';
         mix.copy($AdminResAs+'/assets/extra-libs/datatables.net-bs4/css/dataTables.bootstrap4.css',$AdminPubAs+'/css');
 
 
-mix.js('resources/js/app.js', 'public/js')
+    mix.js("resources/js/app.js", "public/js")
     .vue()
     .sass('resources/sass/app.scss', 'public/css')
     .combine([
@@ -55,6 +55,51 @@ mix.js('resources/js/app.js', 'public/js')
         $AdminResAs+'/assets/extra-libs/jvector/jquery-jvectormap-2.0.2.css',
         $AdminResAs+'/dist/css/style.min.css',
     ], $AdminPubAs+'/css/hc-admin.css')
+    .sourceMaps();
+    mix.version()
+        .browserSync('http://localhost:8000');
+
+// PuppieStar Mix
+const $PuppieResAs = 'resources/assets/front';
+const $PuppiePubAs = 'public/puppiestar';
+
+mix.copy($PuppieResAs + '/js/jquery-3.3.1.min.js', $PuppiePubAs+'/js');
+mix.copy($PuppieResAs + '/fonts', $PuppiePubAs+'/fonts');
+mix.copy($PuppieResAs + '/img', $PuppiePubAs+'/img');
+mix.copy($PuppieResAs + '/css/bootstrap.min.css.map', $PuppiePubAs+'/css');
+mix.copy($PuppieResAs + '/js/bootstrap.min.js.map', $PuppiePubAs+'/js');
+
+
+
+
+mix.js("resources/js/app.js", "public/puppiestar/js")
+    .combine([
+        
+        $PuppieResAs + '/js/bootstrap.min.js',
+        $PuppieResAs + '/js/jquery-ui.min.js',
+        $PuppieResAs + '/js/jquery.countdown.min.js',
+        $PuppieResAs + '/js/jquery.nice-select.min.js',
+        $PuppieResAs + '/js/jquery.zoom.min.js',
+        $PuppieResAs + '/js/jquery.dd.min.js',
+        $PuppieResAs + '/js/jquery.slicknav.js',
+        $PuppieResAs + '/js/owl.carousel.min.js',
+        $PuppieResAs + '/js/main.js',
+    ], $PuppiePubAs + '/js/hc-puppiestar.js')
+
+    .styles([
+        $PuppieResAs + '/css/bootstrap.min.css',
+        $PuppieResAs + '/css/font-awesome.min.css',
+        $PuppieResAs + '/css/themify-icons.css',
+        $PuppieResAs + '/css/elegant-icons.css',
+        $PuppieResAs + '/css/owl.carousel.min.css',
+        $PuppieResAs + '/css/nice-select.css',
+        $PuppieResAs + '/css/jquery-ui.min.css',
+        $PuppieResAs + '/css/slicknav.min.css',
+        $PuppieResAs + '/css/bootstrap.min.css',
+        $PuppieResAs + '/css/bootstrap.min.css',
+        $PuppieResAs + '/css/style.css',
+    ], $PuppiePubAs + '/css/hc-admin.css')
+
     .sourceMaps();
     mix.version()
         .browserSync('http://localhost:8000');
