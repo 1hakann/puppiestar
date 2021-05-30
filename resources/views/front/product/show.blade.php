@@ -9,9 +9,9 @@
                 <div class="filter-widget">
                     <h4 class="fw-title">Categories</h4>
                     <ul class="filter-catagories">
-                        <li><a href="#">Men</a></li>
-                        <li><a href="#">Women</a></li>
-                        <li><a href="#">Kids</a></li>
+                        @foreach (App\Models\Category::all() as $category)
+                            <li><a href="{{route('product.list',[$category->slug])}}">{{$category->name}}</a></li>
+                            @endforeach
                     </ul>
                 </div>
                 <div class="filter-widget">
@@ -154,7 +154,7 @@
                         <div class="product-details">
                             <div class="pd-title">
                                 <span>ORANGES</span>
-                                <h3>{{$productt->name}}</h3>
+                                <h3>{{$product->name}}</h3>
                                 <a href="#" class="heart-icon"><i class="icon_heart_alt"></i></a>
                             </div>
                             <div class="pd-rating">
@@ -166,8 +166,8 @@
                                 <span>(5)</span>
                             </div>
                             <div class="pd-desc">
-                                <p>{!!$productt->description!!}</p>
-                                <h4>$495.00 <span>{{$productt->price}}</span></h4>
+                                <p>{!!$product->description!!}</p>
+                                <h4>$495.00 <span>{{$product->price}}</span></h4>
                             </div>
                             <div class="pd-color">
                                 <h6>Color</h6>
@@ -211,7 +211,7 @@
                                 <a href="#" class="primary-btn pd-cart">Add To Cart</a>
                             </div>
                             <ul class="pd-tags">
-                                <li><span>CATEGORIES</span>: {{$productt->category->name}}</li>
+                                <li><span>CATEGORIES</span>: {{$product->category->name}}</li>
                                 <li><span>TAGS</span>: Clothing, T-shirt, Woman</li>
                             </ul>
                             <div class="pd-share">
@@ -246,7 +246,7 @@
                                     <div class="row">
                                         <div class="col-lg-7">
                                             <h5>Introduction</h5>
-                                            <p>{{$productt->additional_info}}</p>
+                                            <p>{{$product->additional_info}}</p>
                                             <h5>Features</h5>
                                             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do
                                                 eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim
@@ -404,7 +404,7 @@
             </div>
         </div>
         <div class="row">
-            @foreach ($randomItemProducts as $prod)
+            @foreach ($prodFromSameCategory as $prod)
             <div class="col-lg-3 col-sm-6">
                 <div class="product-item">
                     <div class="pi-pic">

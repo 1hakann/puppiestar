@@ -32,6 +32,7 @@ Route::group(['middleware' => ['auth','admin'], 'prefix'=>'admin'], function() {
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('/', [App\Http\Controllers\Front\PuppieController::class, 'index'])->name('puppie');
 Route::get('/product/{id}', [App\Http\Controllers\Front\PuppieController::class, 'show'])->name('puppie.show');
+Route::get('/category/{name}',[App\Http\Controllers\Front\PuppieController::class, 'allProduct'])->name('product.list');
 
 
 

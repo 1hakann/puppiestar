@@ -17,9 +17,17 @@
                     <div class="filter-widget">
                         <h4 class="fw-title">Categories</h4>
                         <ul class="filter-catagories">
-                            @foreach (App\Models\Category::all() as $category)
-                            <li><a href="{{route('product.list',[$category->slug])}}">{{$category->name}}</a></li>
-                            @endforeach
+                            <form action="{{route('product.list',[$slug])}}" method="GET">
+                                @foreach ($subCategories as $subcat)
+                                <p><input type="checkbox" name="subcategory[]" value="{{$subcat->id}}"
+                                @if(isset($filterSubCategories))
+                                {{in_array($subcat->id,$filterSubCategories)?'checked ="checked" ':''}}
+                                @endif
+                                >{{$subcat->name}}</p>
+                                @endforeach
+                                <input type="submit" value="Filter" class="btn btn-warning">
+                            </form>
+                             
                         </ul>
                     </div>
                     <div class="filter-widget">
