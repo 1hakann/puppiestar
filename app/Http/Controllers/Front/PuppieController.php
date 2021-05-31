@@ -17,21 +17,6 @@ class PuppieController extends Controller
         return view('front.index',compact('products'));
     }
 
- /*   public function show($id)
-    {
-        $productt = Product::find($id);
-
-        $products = Product::latest()->limit(9)->get();
-        $randomActiveProducts = Product::inRandomOrder()->limit(4)->get();
-        $randomActiveProductId = [];
-        foreach ($randomActiveProducts as $product) {
-            array_push($randomActiveProductId, $product->id);
-        }
-
-        $randomItemProducts = Product::whereNotIn('id',$randomActiveProductId)->limit(4)->get();
-        return view('front.product.show',compact('productt','products','randomItemProducts','randomActiveProducts'));
-    } */
-
     public function show($id)
     {
         $product = Product::find($id);
@@ -47,17 +32,22 @@ class PuppieController extends Controller
     public function allProduct($name, Request $request)
     {
         $category = Category::where('slug',$name)->first();
+        $categoryId = $category->id;
+        $filterSubCategories = $request->subcategory;
+        $price = $request->price;
         if($request->subcategory) 
         {
             $products = $this->filterProducts($request);
             $filterSubCategories = $this->getSubcategoriesId($request);
-            
+
+        } elseif($request->min||$request->max){
+            $products = $this->filterByPrice($request);
         } else {
            $products = Product::where('category_id',$category->id)->get();  
         }
-        $subCategories = SubCategory::where('category_id',$category->id)->get();
+        $subcategories = SubCategory::where('category_id',$category->id)->get();
         $slug = $name;
-        return view('front.product.category',compact('products','subCategories','slug','filterSubCategories')); 
+        return view('front.product.category',compact('products','subcategories','slug','filterSubCategories','price','categoryId')); 
     }
 
     public function filterProducts(Request $request)
@@ -83,5 +73,12 @@ class PuppieController extends Controller
         }
 
         return $subId;
+    }
+
+    public function filterByPrice(Request $request)
+    {
+        $categoryId = $request->categoryId;
+        $product = Product::whereBetween('price',[$request->min,$request->max ])->where('category_id',$categoryId)->get();
+        return $product;
     }
 }

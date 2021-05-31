@@ -39,7 +39,8 @@ class ProductController extends Controller
             'image' => $image,
             'price' => $request->price,
             'additional_info' => $request->additional_info,
-            'category_id' => $request->category
+            'category_id' => $request->category,
+            'subcategory_id'=>$request->subcategory
         ]);
 
         return redirect()->back()->with('message','Ürün Başarıyla Eklendi');
