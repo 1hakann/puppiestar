@@ -3,7 +3,6 @@
 @section('content')
 <div class="header pt-4 pb-6">
     <div class="header-body">
-      @include('notify::messages')
     <div class="card mx-auto col-md-10">
         Alt Kategori Ekle
         <div class="card-body">

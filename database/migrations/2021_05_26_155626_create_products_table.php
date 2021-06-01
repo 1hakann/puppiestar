@@ -17,7 +17,10 @@ class CreateProductsTable extends Migration
             $table->id();
             $table->string('name');
             $table->string('image');
-            $table->string('price');
+            $table->integer('price');
+            $table->integer('discount_price');
+            $table->string('brand')->default('puppiestar');
+            $table->string('pics',3)->nullable();
             $table->text('description');
             $table->text('additional_info');
             $table->integer('category_id');

@@ -3,7 +3,6 @@
 @section('content')
 <div class="header pt-4 pb-6">
     <div class="header-body">
-      @include('notify::messages')
     <div class="card mx-auto col-md-10">
         Ürün Güncelle
         <div class="card-body">
@@ -56,6 +55,15 @@
                   @enderror 
             </div>
             </div>
+            <div class="form-group row">
+              <div class="col-md-10 mb-4 mb-lg-0">
+              <label for="">Fiyatı</label>
+              <input type="number" class="form-control" name="discount_price" value="{{$product->discount_price}}">
+                @error('discount_price')
+                <span role="alert"><small style="color:#db4bff">{{$message}}</small></span>
+                @enderror 
+          </div>
+          </div>
             <div class="form-group row">
                 <div class="col-md-10 mb-4 mb-lg-0">
                   <label for="">Ürün Detayı</label>

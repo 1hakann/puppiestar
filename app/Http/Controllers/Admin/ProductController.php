@@ -27,6 +27,7 @@ class ProductController extends Controller
             'description' => 'required|min:3',
             'image' => 'required|mimes:png,jpg,jpeg',
             'price' => 'required|numeric',
+            'discount_price' => 'required|numeric',
             'additional_info' => 'required',
             'category' => 'required'
         ]);
@@ -38,12 +39,14 @@ class ProductController extends Controller
             'description' => $request->description,
             'image' => $image,
             'price' => $request->price,
+            'discount_price' => $request->discount_price,
             'additional_info' => $request->additional_info,
             'category_id' => $request->category,
             'subcategory_id'=>$request->subcategory
         ]);
-
-        return redirect()->back()->with('message','Ürün Başarıyla Eklendi');
+           
+        return $request->all();
+       // return redirect()->back()->with('message','Ürün Başarıyla Eklendi');
     }
 
     public function loadSubCategories(Request $request, $id)
@@ -70,6 +73,7 @@ class ProductController extends Controller
             $product->description = $request->description;
             $product->image = $image;
             $product->price = $request->price;
+            $product->discount_price = $request->discount_price;
             $product->additional_info = $request->additional_info;
             $product->category_id = $request->category;
             $product->subcategory_id = $request->subcategory;

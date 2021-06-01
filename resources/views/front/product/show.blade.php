@@ -3,6 +3,7 @@
 @section('content')
 <!-- Product Shop Section Begin -->
 <section class="product-shop spad page-details">
+
     <div class="container">
         <div class="row">
             <div class="col-lg-3">
@@ -14,6 +15,7 @@
                             @endforeach
                     </ul>
                 </div>
+              
                 <div class="filter-widget">
                     <h4 class="fw-title">Brand</h4>
                     <div class="fw-brand-check">
@@ -52,8 +54,8 @@
                     <div class="filter-range-wrap">
                         <div class="range-slider">
                             <div class="price-input">
-                                <input type="text" id="minamount">
-                                <input type="text" id="maxamount">
+                                <input type="text" name="max" id="minamount">
+                                <input type="text" name="min" id="maxamount">
                             </div>
                         </div>
                         <form action="" method="GET">
@@ -62,12 +64,11 @@
                             <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
                             <span tabindex="0" name="min" class="ui-slider-handle ui-corner-all ui-state-default"></span>
                             <span tabindex="0" name="max" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-                            <input type="text" name="min" class="form-control" placeholder="min price" required>
-                            <input type="text" name="max" class="form-control" placeholder="max price" required>
-                            <input type="text" name="categoryId" class="form-control" value="">
+                          
+                            <input type="hidden" name="categoryId" class="form-control" value="">
 
                             </div>
-                    <input type="submit" value="Filter" class="btn btn-warning text-white">
+                    <input type="submit" value="Filter" class="btn btn-warning text-white mt-5">
                     </div>
                 </form>
                    <!-- <a href="#" class="filter-btn">Filter</a> -->
@@ -136,6 +137,7 @@
                 </div>
             </div>
             <div class="col-lg-9">
+
                 <div class="row">
                     <div class="col-lg-6">
                         <div class="product-pic-zoom">
@@ -215,7 +217,7 @@
                                 <div class="pro-qty">
                                     <input type="text" value="1">
                                 </div>
-                                <a href="#" class="primary-btn pd-cart">Add To Cart</a>
+                                <a href="{{route('add.card',$product->id)}}" class="primary-btn pd-cart">Add To Cart</a>
                             </div>
                             <ul class="pd-tags">
                                 <li><span>CATEGORIES</span>: {{$product->category->name}}</li>
@@ -415,7 +417,7 @@
             <div class="col-lg-3 col-sm-6">
                 <div class="product-item">
                     <div class="pi-pic">
-                        <img src="{{Storage::url($prod->image)}}" alt="">
+                        <img style="width: 12em; height:15em" src="{{Storage::url($prod->image)}}" alt="">
                         <div class="sale">Sale</div>
                         <div class="icon">
                             <i class="icon_heart_alt"></i>

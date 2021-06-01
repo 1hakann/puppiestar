@@ -20,8 +20,8 @@
                             <div class="col-lg-7 col-md-7">
                                 <div class="select-option">
                                     <select class="sorting">
-                                        <option value="">Default Sorting</option>
-                                    </select>
+                                        <option value="">Default Sorting </option>
+                                    </select> 
                                     <select class="p-show">
                                         <option value="">Show:</option>
                                     </select>
@@ -38,7 +38,7 @@
                             <div class="col-lg-4 col-sm-6">
                                 <div class="product-item">
                                     <div class="pi-pic">
-                                        <img src="{{Storage::url($product->image)}}" alt="">
+                                        <img style="width: 18em; height:13em" src="{{Storage::url($product->image)}}" alt="">
                                         <div class="sale pp-sale">Sale</div>
                                         <div class="icon">
                                             <i class="icon_heart_alt"></i>
@@ -65,12 +65,11 @@
                         </div>
                     </div>
                     <div>
-                       {<!-- Paginate -->}
+                       <!-- Paginate -->
                     </div>
                     <div class="loading-more">
-                        <i class="icon_loading"></i>
                         <a href="#">
-                            Loading More
+                         
                         </a>
                     </div>
                 </div>

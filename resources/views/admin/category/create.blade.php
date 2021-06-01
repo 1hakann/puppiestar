@@ -3,7 +3,7 @@
 @section('content')
 <div class="header pt-4 pb-6">
     <div class="header-body">
-      @include('notify::messages')
+
     <div class="card mx-auto col-md-10">
         Kategori Ekle
         <div class="card-body">
@@ -14,7 +14,6 @@
               {{session('message')}}
               </div>
               @endif
-    
         <form action="{{route('category.store')}}" enctype="multipart/form-data" method="POST">
         @csrf
         @method("POST")

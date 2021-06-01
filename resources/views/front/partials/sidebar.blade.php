@@ -47,15 +47,15 @@
         <div class="filter-range-wrap">
             <div class="range-slider">
                 <div class="price-input">
-                    <input type="text" id="minamount">
-                    <input type="text" id="maxamount">
+                    <input type="text" name="min" id="minamount">
+                    <input type="text" name="max" id="maxamount">
                 </div>
             </div>
             <div class="price-range ui-slider ui-corner-all ui-slider-horizontal ui-widget ui-widget-content"
-                data-min="33" data-max="98">
+                data-min="1" data-max="999">
                 <div class="ui-slider-range ui-corner-all ui-widget-header"></div>
                 <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
-               
+                <span tabindex="0" class="ui-slider-handle ui-corner-all ui-state-default"></span>
             </div>
         </div>
         

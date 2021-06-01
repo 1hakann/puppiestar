@@ -3,7 +3,7 @@
 @section('content')
 <div class="header pt-4 pb-6">
     <div class="header-body">
-      @include('notify::messages')
+     
         <div class="card mx-auto col-md-10">
             <div class="card-body">
                 @if(session('message'))
@@ -17,7 +17,7 @@
                     <a class="light" href="{{route('product.create')}}"><input type="button" value="Ürün Ekle" class="btn btn-success"></a></h1>
 
                     <ol class="breadcrumb">
-                        <li class="breadcrumb-item"><a href="./admin">Anasayfa</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('puppie')}}">Anasayfa</a></li>
                         <li class="breadcrumb-item active" aria-current="page">Ürünler</li>
                     </ol>
                 </div>
@@ -30,6 +30,7 @@
                                 <th>Açıklama</th>
                                 <th>Detay</th>
                                 <th>Ücreti</th>
+                                <th>İndirimli Ücret</th>
                                 <th>Kategorisi</th>
                                 <th>İşlemler</th>
                             </tr>
@@ -43,6 +44,7 @@
                                 <td>{!!$product->description!!}</td>
                                 <td>{!!$product->additional_info!!}</td>
                                 <td>{{$product->price}}</td>
+                                <td>{{$product->discount_price}}</td>
                                 <td>{{$product->category->name ?? ''}}</td>
                                 <td><a href="{{route('product.edit',$product->id)}}" class="btn btn-circle btn-sm float-left" title="Edit"><i class="fas fa-allergies"></i></a>
                                     <form action="{{route('product.destroy',$product->id)}}" method="POST">

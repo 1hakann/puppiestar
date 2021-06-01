@@ -51,6 +51,7 @@ class CategoryController extends Controller
             'image' => $image
         ]);
 
+        
         return redirect()->route('category.index')->with('message','Kategori Başarıyla Oluşturuldu'); 
     }
 

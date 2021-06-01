@@ -26,7 +26,8 @@ class PuppieController extends Controller
         ->limit(3)
         ->get();
 
-        return view('front.product.show',compact('product','prodFromSameCategory'));    
+        notify()->success('Ürün Sepete Eklendi');
+        return view('front.product.show',compact('product','prodFromSameCategory'));
     }
 
     public function allProduct($name, Request $request)

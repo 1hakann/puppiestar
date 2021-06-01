@@ -14,6 +14,9 @@
 
     <!-- Css Styles -->
     <link rel="stylesheet" href="{{mix('puppiestar/css/hc-admin.css')}}" type="text/css">
+    @notifyCss
+    
+   
 </head>
 
  <!-- Header Section Begin -->
@@ -31,7 +34,14 @@
                 </div>
             </div>
             <div class="ht-right">
-                <a href="#" class="login-panel"><i class="fa fa-user"></i>Login</a>
+                @guest
+                <a href="{{route('login')}}" class="login-panel"><i class="fa fa-user"></i>Login</a> 
+                <a href="{{route('register')}}" class="login-panel"><i class="fa fa-user"></i>Register</a>    
+                @else
+                <a href="{{route('logout')}}" class="login-panel"><i class="fa fa-user"></i>Logout</a>    
+
+                @endguest
+                
                 <div class="lan-selector">
                     <select class="language_drop" name="countries" id="countries" style="width:300px;">
                         <option value='yt' data-image="{{asset('puppiestar/img/flag-1.jpg')}}" data-imagecss="flag yt"
@@ -71,10 +81,20 @@
                 <div class="col-lg-3 text-right col-md-3">
                     <ul class="nav-right">
                         <li class="heart-icon"><a href="#">
-                                <i class="icon_heart_alt"></i>
+                                <i class="icon_heart_alt">
+                                </i>
                                 <span>1</span>
                             </a>
                         </li>
+                        <li class="heart-icon">
+                            <a href="#">
+                                <i class="icon_heart_alt">
+                                </i>
+                                <span> {{session()->has('card')?session()->get('card')->totalQty:'0'}}</span>
+                            </a>
+                           
+                        </li>
+                        
                         <li class="cart-icon"><a href="#">
                                 <i class="icon_bag_alt"></i>
                                 <span>3</span>
@@ -115,7 +135,7 @@
                                     <h5>$120.00</h5>
                                 </div>
                                 <div class="select-button">
-                                    <a href="#" class="primary-btn view-card">VIEW CARD</a>
+                                    <a href="{{route('card.show')}}" class="primary-btn view-card">VIEW CARD</a>
                                     <a href="#" class="primary-btn checkout-btn">CHECK OUT</a>
                                 </div>
                             </div>
@@ -163,8 +183,13 @@
                             <li><a href="./shopping-cart.html">Shopping Cart</a></li>
                             <li><a href="./check-out.html">Checkout</a></li>
                             <li><a href="./faq.html">Faq</a></li>
-                            <li><a href="./register.html">Register</a></li>
-                            <li><a href="./login.html">Login</a></li>
+                            @guest
+                            <li><a href="{{route('register')}}">Register</a></li>
+                            <li><a href="{{route('login')}}">Login</a></li>
+                            @else
+                            <li><a href="{{route('logout')}}">Logout</a></li>
+                            @endguest
+                          
                         </ul>
                     </li>
                 </ul>

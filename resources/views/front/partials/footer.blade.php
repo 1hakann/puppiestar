@@ -76,6 +76,8 @@ Copyright &copy;<script>document.write(new Date().getFullYear());</script> All r
 <!-- Js Plugins -->
 <script src="{{asset('puppiestar/js/jquery-3.3.1.min.js')}}"></script>
 <script src="{{mix('puppiestar/js/hc-puppiestar.js')}}"></script>
+@notifyJs
+<x:notify-messages />
 </body>
 
 </html>
